@@ -20,7 +20,7 @@ export default class Login extends React.Component {
                         </div>
 
                         <div className="submit-button">
-                            <Button fullWidth variant="contained" type="submit" color="primary" onClick={() => {alert('clicked')}}>
+                            <Button fullWidth variant="contained" type="submit" color="primary" onClick={() => {this.props.onLogin()}}>
                                 Login
                             </Button>
                         </div>
