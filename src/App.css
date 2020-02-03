@@ -13,6 +13,7 @@ body {
 
 .all-containers {
 
+ 
   
 }
 
@@ -25,9 +26,13 @@ body {
 }
 
 .online-styles, .volume-styles, .quality-card {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: center; */
+}
+
+.notifications {
+  margin-top: 20px;
 }
 

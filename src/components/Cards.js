@@ -23,7 +23,7 @@ const useStyles = makeStyles({
 
 const moreStyles = makeStyles(theme => ({
     button: {
-        display: 'block',
+        display: 'flex',
         marginTop: theme.spacing(2)
     },
     formControl: {
@@ -31,6 +31,7 @@ const moreStyles = makeStyles(theme => ({
         minWidth: 120,
     },
 }))
+
 
 
 const OnlineMode = () => {
@@ -56,15 +57,21 @@ const OnlineMode = () => {
         setOpen(true);
     }
 
+    // export let addNotifs = (notifs) => {
+    //     this.setState({
+    //         notifications: [...this.state.notifications, notifs]
+    //     })
+    // }
+
 
 
     return (
         <div className={classes.root}>
-            <div className="all-containers">
-                <Grid container directions="row" justify="center" alignItems="center">
+            <Grid container directions="row" justify="center" alignItems="center">
+                <div className="all-containers">
                     <Card className="online-styles">
                         <CardContent>
-                            <Typography classname="card-title" color="primary">
+                            <Typography className="card-title" color="primary">
                                 Online Mode
                             </Typography>
 
@@ -74,7 +81,7 @@ const OnlineMode = () => {
                         </CardContent>
 
                         <CardActions>
-                            <FormControlLabel value="Online" control={<Switch color="primary" />} label="Offline" labelPlacement="Start"/>
+                            <FormControlLabel value="Online" control={<Switch color="primary" />} />
                         </CardActions>
 
                     </Card>
@@ -91,7 +98,7 @@ const OnlineMode = () => {
 
                         <CardActions>
 
-                            <Typography id="continuous-slider" gutterBottom>
+                            <Typography id="discrete-slider" gutterBottom>
                                 Volume
                             </Typography>
 
@@ -100,7 +107,15 @@ const OnlineMode = () => {
                                     <VolumeDown />
                                 </Grid>
                                 <Grid item xl>
-                                    <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />
+                                    <Slider 
+                                    step={10} 
+                                    value={value} 
+                                    onChange={handleChange} 
+                                    aria-labelledby="discrete-slider" 
+                                    valueLabelDisplay="auto"
+                                    marks
+                                    min={10}
+                                    max={100}/>
                                 </Grid>
                                 <Grid item>
                                     <VolumeUp />
@@ -146,8 +161,8 @@ const OnlineMode = () => {
                             </Grid>
                         </CardContent>
                     </Card>
-                </Grid>
-            </div>
+                </div>
+            </Grid>
         </div>
     )
 }
